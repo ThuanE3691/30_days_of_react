@@ -1,10 +1,10 @@
 import "./App.css";
-import Day7Practice from "./Day/Day7/Components/Day7Practice";
+import MappingArray from "./Day/Day6__MappingArray/Components/MappingArray";
 
 function App() {
 	return (
 		<div className="App">
-			<Day7Practice></Day7Practice>
+			<MappingArray></MappingArray>
 		</div>
 	);
 }

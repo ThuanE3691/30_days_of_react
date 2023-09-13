@@ -27,7 +27,7 @@ const generateNumber = (min = 0, max = 31) => {
 	return list_num;
 };
 
-const Day7Practice = () => {
+const MappingArray = () => {
 	const list_num = generateNumber();
 	return (
 		<main>
@@ -44,4 +44,4 @@ const Day7Practice = () => {
 	);
 };
 
-export default Day7Practice;
+export default MappingArray;
