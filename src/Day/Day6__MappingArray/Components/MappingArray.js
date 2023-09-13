@@ -1,10 +1,10 @@
 import ColorArray from "./ColorArray";
-import NumberArray from "./NumberArray";
+import NumberArray from "./NumberArray.server.js";
 import WorldPopulation from "./WorldPopulation";
 
 const MappingArray = () => {
 	return (
-		<main className="flex flex-col justify-center items-center bg-[#D6D9E0]">
+		<main className="flex-col">
 			<NumberArray></NumberArray>
 			<ColorArray></ColorArray>
 			<WorldPopulation></WorldPopulation>

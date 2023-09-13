@@ -5,6 +5,9 @@ module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
+			colors: {
+				sub: "#ABB3C1",
+			},
 			fontFamily: {
 				inter: "Inter",
 			},

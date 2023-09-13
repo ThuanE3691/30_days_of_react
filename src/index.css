@@ -9,6 +9,11 @@ body {
   padding: 0;
 }
 
+body,html{
+  height: 100%;
+
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -18,3 +23,45 @@ code {
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@200;300;400;500;700&family=Montserrat:wght@400;500;600&display=swap');
+
+@layer components{
+  .flex__center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main__title{
+    font-size: 32px;
+    color: black;
+    font-family: 'Inter';
+    font-weight: 500;
+  }
+
+  .sub__title{
+    font-size: 16px;
+    color: #ABB3C1;
+    font-family: 'Inter';
+    font-weight: 450;
+  }
+
+  .bold__text{
+    font-family: 'Inter';
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .semibold__text{
+    font-family: 'Inter';
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .nm__text{
+    font-family: 'Inter';
+    color: black;
+    font-size: 18px;
+  }
+}
