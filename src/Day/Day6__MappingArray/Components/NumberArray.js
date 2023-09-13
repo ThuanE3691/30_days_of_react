@@ -31,7 +31,7 @@ const NumberArray = () => {
 	const list_num = generateNumber();
 
 	return (
-		<section>
+		<section className="flex flex-col items-center justify-center">
 			<h1 className="text-[30px] font-semibold font-mono">30 Days Of React</h1>
 			<div className="font-mono text-[18px]">Number generator</div>
 			<div className="flex items-center justify-center mt-4 ">

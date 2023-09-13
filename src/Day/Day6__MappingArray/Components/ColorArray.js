@@ -20,7 +20,7 @@ const ColorArray = () => {
 	const list_colors = generateColor();
 
 	return (
-		<section className="mt-4">
+		<section className="mt-4 flex flex-col items-center">
 			<div className="font-mono text-[18px]">Hexadecimal colors</div>
 			<div className="flex items-center justify-center mt-4 ">
 				<div className="grid grid-cols-8 gap-px">

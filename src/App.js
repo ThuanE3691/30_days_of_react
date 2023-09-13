@@ -1,10 +1,13 @@
+import AnimatedRoute from "./AnimatedRoute";
 import "./App.css";
-import MappingArray from "./Day/Day6__MappingArray/Components/MappingArray";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
 	return (
 		<div className="App">
-			<MappingArray></MappingArray>
+			<Router>
+				<AnimatedRoute></AnimatedRoute>
+			</Router>
 		</div>
 	);
 }
