@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import useMeasure from "react-use-measure";
 
 const pageVariants = {
 	enter: { opacity: 0 },
@@ -6,39 +7,48 @@ const pageVariants = {
 	exit: { opacity: 0 },
 };
 
-const fadeVariants = {
-	enter: { width: "0px", opacity: 0 },
-	animate: { width: "1200px", opacity: 1 },
-	exit: { width: "0px", opacity: 0 },
-};
-
 const AnimatedPage = ({ children }) => {
+	const [ref, { height }] = useMeasure();
+
 	return (
-		<div className="flex__center bg-sub w-full h-full">
-			<AnimatePresence>
+		<div className=" overflow-auto relative flex items-start justify-center bg-main__bg w-full h-screen">
+			<motion.div
+				layout
+				className={`${
+					height ? "relative" : "relative"
+				}  bg-white px-8 py-5 overflow-hidden mt-8 rounded-md shadow-2xl`}
+				initial={{ width: 0, opacity: 0, height: 0 }}
+				animate={{
+					width: "1200px",
+					opacity: 1,
+					height: height,
+				}}
+				exit={{ width: 0, opacity: 0, height: 0 }}
+				transition={{
+					duration: 0.5,
+					delay: 0,
+					opacity: {
+						delay: 0.2,
+						duration: 0.4,
+					},
+				}}
+				key={children}
+			>
 				<motion.div
-					layout
-					className="bg-white px-8 h-full"
-					variants={fadeVariants}
+					variants={pageVariants}
 					initial="enter"
 					animate="animate"
 					exit="exit"
-					transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-					key="page-fade"
+					className="overflow-hidden"
+					key="content-children"
+					ref={ref}
 				>
-					<motion.div
-						variants={pageVariants}
-						initial="enter"
-						animate="animate"
-						exit="exit"
-						transition={{ delay: 0.8, ease: "easeInOut", duration: 0.3 }}
-					>
-						<h1 className="main__title">30 Days Of React</h1>
-						<h3 className="sub__title">Day 6 - Mapping Array</h3>
-						{children}
-					</motion.div>
+					<h1 className="main__title">30 Days Of React</h1>
+					<h3 className="sub__title">Day 6 - Mapping Array</h3>
+					<div className="w-full h-[1px] bg-black rounded-sm mt-4"></div>
+					<AnimatePresence mode="popLayout">{children}</AnimatePresence>
 				</motion.div>
-			</AnimatePresence>
+			</motion.div>
 		</div>
 	);
 };

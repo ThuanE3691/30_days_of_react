@@ -7,9 +7,11 @@ module.exports = {
 		extend: {
 			colors: {
 				sub: "#ABB3C1",
+				main__bg: "#D6D9E0",
 			},
 			fontFamily: {
 				inter: "Inter",
+				lato: "Lato",
 			},
 		},
 	},

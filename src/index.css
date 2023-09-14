@@ -22,7 +22,7 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@200;300;400;500;700&family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@200;300;400;500;700&family=Lato:wght@300;400;700&display=swap');
 
 @layer components{
   .flex__center{
@@ -31,37 +31,52 @@ code {
     justify-content: center;
   }
 
+  .flex__center_start{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
   .main__title{
     font-size: 32px;
     color: black;
-    font-family: 'Inter';
+    font-family: 'Lato';
     font-weight: 500;
   }
 
   .sub__title{
     font-size: 16px;
     color: #ABB3C1;
-    font-family: 'Inter';
+    font-family: 'Lato';
     font-weight: 450;
   }
 
   .bold__text{
-    font-family: 'Inter';
+    font-family: 'Lato';
     color: black;
     font-size: 22px;
     font-weight: 600;
   }
 
   .semibold__text{
-    font-family: 'Inter';
+    font-family: 'Lato';
     color: black;
     font-size: 20px;
     font-weight: 500;
   }
 
   .nm__text{
-    font-family: 'Inter';
+    font-family: 'Lato';
     color: black;
     font-size: 18px;
+  }
+
+  .click__object{
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .click__object:hover{
+    opacity: 60%;
   }
 }

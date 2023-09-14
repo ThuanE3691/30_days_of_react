@@ -1,5 +1,5 @@
 import ColorArray from "./ColorArray";
-import NumberArray from "./NumberArray.server.js";
+import NumberArray from "./NumberArray.js";
 import WorldPopulation from "./WorldPopulation";
 
 const MappingArray = () => {

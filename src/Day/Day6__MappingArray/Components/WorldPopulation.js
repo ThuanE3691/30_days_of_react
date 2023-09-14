@@ -1,4 +1,5 @@
 import { tenHighestPopulation } from "../Data/topWPD";
+import HiddenContent from "../../../HiddenContent";
 
 const calculateWidthPercentage = (max_width, target_width) => {
 	return Math.floor((target_width / max_width) * 100);
@@ -32,20 +33,25 @@ const WorldPopulation = () => {
 	});
 
 	return (
-		<div className="mt-4 flex flex-col items-center justify-center mb-10">
-			<p className="text-[32px]">World Population</p>
-			<p className="text-[12px]">Ten most populated countries</p>
-			<div className="grid grid-cols-7 gap-2 items-start justify-items-start mt-6">
-				{tenHighestPopulation.map((ranked) => {
-					return (
-						<Row
-							country={ranked.country}
-							length={ranked.length}
-							population={ranked.population}
-						></Row>
-					);
-				})}
-			</div>
+		<div className="mt-4 flex flex-col justify-center mb-10">
+			<HiddenContent title={"Exercise 3 - Plot World Population Ranked"}>
+				<div className="flex flex-col items-center">
+					<p className="text-[32px]">World Population</p>
+					<p className="text-[12px]">Ten most populated countries</p>
+					<div className="grid grid-cols-7 gap-2 items-start justify-items-start mt-6">
+						{tenHighestPopulation.map((ranked) => {
+							return (
+								<Row
+									country={ranked.country}
+									length={ranked.length}
+									population={ranked.population}
+									key={ranked.country}
+								></Row>
+							);
+						})}
+					</div>
+				</div>
+			</HiddenContent>
 		</div>
 	);
 };
