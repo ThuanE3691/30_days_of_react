@@ -1,5 +1,5 @@
 import Cell from "./Cell";
-import HiddenContent from "../../../HiddenContent";
+import HiddenContent from "../../../Animation/HiddenContent";
 
 const generateColor = (min = 0, max = 31) => {
 	let list_colors = [];

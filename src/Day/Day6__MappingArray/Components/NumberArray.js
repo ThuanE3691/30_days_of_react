@@ -1,5 +1,5 @@
 import Cell from "./Cell";
-import HiddenContent from "../../../HiddenContent";
+import HiddenContent from "../../../Animation/HiddenContent";
 
 const isPrime = (value) => {
 	if (value === 0 || value === 1) return false;

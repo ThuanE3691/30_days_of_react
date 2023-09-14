@@ -1,4 +1,4 @@
-import right_arrow from "./Assets/play.png";
+import right_arrow from "../Assets/play.png";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
