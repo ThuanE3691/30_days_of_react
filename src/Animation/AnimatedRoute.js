@@ -15,13 +15,11 @@ const AnimatedRoute = () => {
 					{folders.map((folder) => {
 						return (
 							<Route
-								path={`day${folder.day}`}
+								path={`/day${folder.day}`}
 								element={
-									<AnimatedPage
-										children={folder.component}
-										title={folder.content}
-										day={folder.day}
-									/>
+									<AnimatedPage title={folder.content} day={folder.day}>
+										{folder.component}
+									</AnimatedPage>
 								}
 								key={folder.day}
 							></Route>

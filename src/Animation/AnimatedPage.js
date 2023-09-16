@@ -15,13 +15,14 @@ const pageVariants = {
 };
 
 const animateTransition = {
-	duration: 1,
+	duration: 0.5,
 	opacity: {
-		delay: 0.2,
-		duration: 0.6,
+		duration: 0.2,
+	},
+	height: {
+		duration: 0.5,
 	},
 	ease: "easeInOut",
-	type: "tween",
 };
 
 const exitTransition = {
@@ -36,14 +37,13 @@ const exitTransition = {
 
 const AnimatedPage = ({ day, title, children }) => {
 	const [ref, { height }] = useMeasure();
-
 	return (
 		<div className=" overflow-auto relative flex items-start justify-center w-full h-screen">
 			<motion.div
 				layout
 				className={`${
-					height ? "relative" : "relative"
-				}  bg-white px-8 py-5 overflow-hidden mt-8 rounded-md shadow-2xl`}
+					height ? "absolute" : "relative"
+				}  bg-white px-8 py-5 overflow-hidden my-8 rounded-md shadow-2xl`}
 				initial={{ width: 0, opacity: 0, height: 0 }}
 				animate={{
 					width: "1200px",
@@ -57,7 +57,7 @@ const AnimatedPage = ({ day, title, children }) => {
 					height: 0,
 					transition: exitTransition,
 				}}
-				key={children}
+				key={day}
 			>
 				<motion.div
 					variants={pageVariants}
@@ -65,7 +65,7 @@ const AnimatedPage = ({ day, title, children }) => {
 					animate="animate"
 					exit="exit"
 					className="overflow-hidden"
-					key="content-children"
+					key={children}
 					ref={ref}
 				>
 					<h1 className="main__title">30 Days Of React</h1>
@@ -73,7 +73,9 @@ const AnimatedPage = ({ day, title, children }) => {
 						Day {day} - {title}
 					</h3>
 					<div className="w-full h-[1px] bg-black rounded-sm mt-4"></div>
-					<AnimatePresence mode="popLayout">{children}</AnimatePresence>
+					<AnimatePresence mode="popLayout" layout>
+						{children}
+					</AnimatePresence>
 				</motion.div>
 			</motion.div>
 		</div>

@@ -4,7 +4,7 @@ import WorldPopulation from "./WorldPopulation";
 
 const MappingArray = () => {
 	return (
-		<main className="flex-col">
+		<main className="flex flex-col ">
 			<NumberArray></NumberArray>
 			<ColorArray></ColorArray>
 			<WorldPopulation></WorldPopulation>

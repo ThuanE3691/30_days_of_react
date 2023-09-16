@@ -1,4 +1,4 @@
-import { tenHighestPopulation } from "../Data/topWPD";
+import { tenHighestPopulation } from "../../Day7__ClassComponent/Data/topWPD";
 import HiddenContent from "../../../Animation/HiddenContent";
 
 const calculateWidthPercentage = (max_width, target_width) => {
